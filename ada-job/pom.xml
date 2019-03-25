@@ -5,9 +5,15 @@
 
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>com.adachina.commons</groupId>
+        <artifactId>adachina-commons</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
     <groupId>com.adachina.job</groupId>
     <artifactId>adachina-job</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>${ada-job.version}</version>
     <packaging>jar</packaging>
 
     <dependencies>

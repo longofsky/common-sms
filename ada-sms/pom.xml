@@ -5,14 +5,25 @@
 
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>com.adachina.commons</groupId>
+        <artifactId>adachina-commons</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
     <groupId>com.adachina.sms</groupId>
     <artifactId>adachina-sms</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>${ada-sms.version}</version>
     <packaging>jar</packaging>
 
     <dependencies>
 
 
+        <dependency>
+            <groupId>com.mks.api</groupId>
+            <artifactId>mksapi-jar</artifactId>
+            <version>${mksapi-jar.version}</version>
+        </dependency>
     </dependencies>
 
     <build>

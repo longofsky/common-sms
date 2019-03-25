@@ -5,61 +5,55 @@
 
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>com.adachina.commons</groupId>
+        <artifactId>adachina-commons</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
     <groupId>com.adachina.web</groupId>
     <artifactId>adachina-web</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>${ada-web.version}</version>
     <packaging>jar</packaging>
 
-    <properties>
-        <!-- MyBatis Generator -->
-        <!-- Java接口和实体类 -->
-        <targetJavaProject>${basedir}/src/main/java</targetJavaProject>
-        <targetMapperPackage>com.adachina.web.mapper</targetMapperPackage>
-        <targetModelPackage>com.adachina.web.entity</targetModelPackage>
-        <!-- XML生成路径 -->
-        <targetResourcesProject>${basedir}/src/main/resources</targetResourcesProject>
-        <targetXMLPackage>mapper</targetXMLPackage>
-        <!-- 依赖版本 -->
-        <mapper.version>3.4.0</mapper.version>
-        <mybatis.version>3.3.1</mybatis.version>
-        <mybatis.spring.version>1.2.4</mybatis.spring.version>
-        <pagehelper.version>4.1.1</pagehelper.version>
-        <mysql.connector.java.version>8.0.15</mysql.connector.java.version>
-    </properties>
+
 
     <dependencies>
         <dependency>
             <groupId>com.adachina.common</groupId>
             <artifactId>adachina-commo</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>${ada-common.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <version>${spring-boot-starter-web.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
+            <version>${spring-boot-starter-actuator.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-consul-discovery</artifactId>
+            <version>${spring-cloud-starter-consul-discovery.version}</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/com.ctrip.framework.apollo/apollo-client -->
         <dependency>
             <groupId>com.ctrip.framework.apollo</groupId>
             <artifactId>apollo-client</artifactId>
-            <version>1.2.0</version>
+            <version>${apollo-client.version}</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>3.8.1</version>
+            <version>${commons-lang3.version}</version>
         </dependency>
 
         <!-- 持久层 -->
@@ -72,61 +66,63 @@
                     <groupId>org.springframework</groupId>
                 </exclusion>
             </exclusions>
+            <version>${spring-boot-starter-jdbc.version}</version>
         </dependency>
 
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql-connector-java.version}</version>
         </dependency>
 
         <!-- druid -->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>
-            <version>1.1.14</version>
+            <version>${druid-spring-boot-starter.version}</version>
         </dependency>
 
         <!-- 通用mapper -->
         <dependency>
             <groupId>tk.mybatis</groupId>
             <artifactId>mapper-spring-boot-starter</artifactId>
-            <version>1.1.2</version>
+            <version>${mapper-spring-boot-starter.version}</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/com.github.pagehelper/pagehelper-spring-boot-starter -->
         <dependency>
             <groupId>com.github.pagehelper</groupId>
             <artifactId>pagehelper-spring-boot-starter</artifactId>
-            <version>1.2.10</version>
+            <version>${pagehelper-spring-boot-starter.version}</version>
         </dependency>
 
         <!-- 数据库驱动 -->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
-            <version>1.1.14</version>
+            <version>${druid.version}</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.6</version>
+            <version>${lombok.version}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-context</artifactId>
-            <version>2.1.0.RELEASE</version>
+            <version>${spring-cloud-context.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>RELEASE</version>
+            <version>${spring-boot-starter-web.version}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-commons</artifactId>
-            <version>2.1.0.RELEASE</version>
+            <version>${spring-cloud-commons.version}</version>
         </dependency>
 
     </dependencies>
@@ -150,13 +146,13 @@
                     <dependency>
                         <groupId>mysql</groupId>
                         <artifactId>mysql-connector-java</artifactId>
-                        <version>${mysql.connector.java.version}</version>
+                        <version>${mysql-connector-java.version}</version>
                         <scope>runtime</scope>
                     </dependency>
                     <dependency>
                         <groupId>tk.mybatis</groupId>
                         <artifactId>mapper</artifactId>
-                        <version>${mapper.version}</version>
+                        <version>${tk.mybatis.mapper.version}</version>
                     </dependency>
                 </dependencies>
             </plugin>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="adachina-commo" />
+        <module name="adachina-sms" />
+        <module name="adachina-web" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="adachina-commo" target="11" />
+      <module name="adachina-commons" target="1.8.0_152-release" />
+      <module name="adachina-job" target="11" />
+      <module name="adachina-job (1)" target="11" />
+      <module name="adachina-job (2)" target="11" />
+      <module name="adachina-sms" target="11" />
+      <module name="adachina-web" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

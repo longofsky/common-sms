@@ -5,8 +5,8 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.adachina.um</groupId>
-    <artifactId>adachina-um</artifactId>
+    <groupId>com.adachina.sms</groupId>
+    <artifactId>adachina-sms</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 

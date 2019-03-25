@@ -12,7 +12,7 @@
 		<module>ada-common</module>
 		<module>ada-job</module>
 		<module>ada-web</module>
-		<module>ada-um</module>
+		<module>ada-sms</module>
 
 	</modules>
 

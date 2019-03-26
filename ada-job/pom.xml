@@ -7,30 +7,17 @@
 
     <parent>
         <groupId>com.adachina.commons</groupId>
-        <artifactId>adachina-commons</artifactId>
+        <artifactId>ada-commons</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
     <groupId>com.adachina.job</groupId>
-    <artifactId>adachina-job</artifactId>
+    <artifactId>ada-job</artifactId>
     <version>${ada-job.version}</version>
     <packaging>jar</packaging>
 
     <dependencies>
 
     </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>11</source>
-                    <target>11</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 
 </project>

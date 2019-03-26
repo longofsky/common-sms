@@ -7,12 +7,12 @@
 
     <parent>
         <groupId>com.adachina.commons</groupId>
-        <artifactId>adachina-commons</artifactId>
+        <artifactId>ada-commons</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
     <groupId>com.adachina.web</groupId>
-    <artifactId>adachina-web</artifactId>
+    <artifactId>ada-web</artifactId>
     <version>${ada-web.version}</version>
     <packaging>jar</packaging>
 
@@ -21,7 +21,7 @@
     <dependencies>
         <dependency>
             <groupId>com.adachina.common</groupId>
-            <artifactId>adachina-commo</artifactId>
+            <artifactId>ada-common</artifactId>
             <version>${ada-common.version}</version>
         </dependency>
 
@@ -123,6 +123,12 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-commons</artifactId>
             <version>${spring-cloud-commons.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.adachina.common</groupId>
+            <artifactId>ada-common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
 
     </dependencies>

@@ -9,14 +9,12 @@
     <packaging>pom</packaging>
 
 	<modules>
-
 		<module>ada-common</module>
 		<module>ada-common-job</module>
 		<module>ada-common-web</module>
 		<module>ada-common-sms</module>
         <module>ada-common-secure</module>
         <module>ada-common-serializer</module>
-
 	</modules>
 
     <properties>

@@ -33,63 +33,41 @@
 
         <!--apache-->
         <commons-lang3.version>3.8.1</commons-lang3.version>
-        <commons-io.version>1.3.2</commons-io.version>
         <log4j-api.version>2.11.2</log4j-api.version>
         <log4j-slf4j-impl.version>2.10.0</log4j-slf4j-impl.version>
         <slf4j-api.version>1.8.0-alpha2</slf4j-api.version>
-        <poi.version>4.0.1</poi.version>
         <commons-codec.version>1.11</commons-codec.version>
         <commons-beanutils.version>1.9.3</commons-beanutils.version>
         <org.apache.commons.codec.version>1.8</org.apache.commons.codec.version>
         <org.apache.commons.collections.version>3.2.1</org.apache.commons.collections.version>
         <org.apache.commons.io.version>2.4</org.apache.commons.io.version>
-        <org.apache.commons.lang.version>2.6</org.apache.commons.lang.version>
         <avro.version>1.8.1</avro.version>
         <libthrift.version>0.9.3</libthrift.version>
 
-
         <!--spring-boot-starter-->
         <spring-boot-starter-web.version>2.0.8.RELEASE</spring-boot-starter-web.version>
-        <spring-boot-starter-test.version>2.0.8.RELEASE</spring-boot-starter-test.version>
-        <spring-boot-starter-actuator.version>2.0.8.RELEASE</spring-boot-starter-actuator.version>
-        <spring-cloud-starter-consul-discovery.version>2.1.0.RELEASE</spring-cloud-starter-consul-discovery.version>
-        <spring-boot-starter-jdbc.version>2.0.8.RELEASE</spring-boot-starter-jdbc.version>
-        <druid-spring-boot-starter.version>1.1.14</druid-spring-boot-starter.version>
-        <spring-webmvc.version>5.1.5.RELEASE</spring-webmvc.version>
         <spring-data-redis.version>2.1.5.RELEASE</spring-data-redis.version>
-        <spring-cloud-context.version>2.1.0.RELEASE</spring-cloud-context.version>
-        <spring-cloud-commons.version>2.1.0.RELEASE</spring-cloud-commons.version>
-        <spring-web.version>5.0.4.RELEASE</spring-web.version>
-
-        <jjwt.version>0.7.0</jjwt.version>
         <joda-time.version>2.9.5</joda-time.version>
-        <javax.servlet-api.version>3.1.0</javax.servlet-api.version>
-        <mksapi-jar.version>4.10.9049</mksapi-jar.version>
-
         <fastjson.version>1.2.31</fastjson.version>
         <jackson-databind.version>2.9.8</jackson-databind.version>
         <jackson-core.version>2.9.8</jackson-core.version>
         <esotericsoftware.kryo.version>2.10</esotericsoftware.kryo.version>
-
-        <javassist.version>3.22.0-GA</javassist.version>
-
-        <tk.mybatis.version>3.4.0</tk.mybatis.version>
-
-        <mysql-connector-java.version>8.0.15</mysql-connector-java.version>
         <mapper-spring-boot-starter.version>1.1.2</mapper-spring-boot-starter.version>
         <pagehelper-spring-boot-starter.version>1.2.10</pagehelper-spring-boot-starter.version>
-        <druid.version>1.1.14</druid.version>
-        <tk.mybatis.mapper.version>4.1.2</tk.mybatis.mapper.version>
-        <github-pagehelper.version>5.0.3</github-pagehelper.version>
 
         <lombok.version>1.18.6</lombok.version>
-        <apollo-client.version>1.2.0</apollo-client.version>
 
         <hessian.version>4.0.38</hessian.version>
         <xstream.version>1.4.10</xstream.version>
         <protostuff-core.version>1.0.9</protostuff-core.version>
         <jboss-marshalling.version>2.0.0.Beta2</jboss-marshalling.version>
         <netty-all.version>4.1.21.Final</netty-all.version>
+
+        <!--jaxb-->
+        <jaxb-api.version>2.3.0</jaxb-api.version>
+        <jaxb-impl.version>2.3.0</jaxb-impl.version>
+        <jaxb-core.version>2.3.0</jaxb-core.version>
+        <activation.version>1.1.1</activation.version>
 
     </properties>
 

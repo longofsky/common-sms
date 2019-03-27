@@ -1,7 +1,7 @@
 package com.ada.sms.enums;
 
 /**
- * @ProjectName: microservice-spring-cloud
+ * @ProjectName: ada-sms
  * @Package: com.ada.sms.enums
  * @ClassName: MessageServiceEnum
  * @Author: litianlong

@@ -1,9 +1,8 @@
 package com.ada.sms.service;
 
-import com.ada.sms.enums.MessageServiceEnum;
 import com.ada.sms.params.AdaReqParam;
 import com.ada.sms.params.AdaRespParam;
-import com.ada.sms.params.BaseConParam;
+import com.ada.sms.params.WelinkReqParam;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,7 +12,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 /**
- * @ProjectName: microservice-spring-cloud
+ * @ProjectName: ada-sms
  * @Package: com.adachina.sms.service
  * @ClassName: WSCMessageServiceImpl
  * @Author: litianlong
@@ -21,16 +20,9 @@ import java.net.URL;
  * @Date: 2019-03-27 13:42
  * @Version: 1.0
  */
-public class WelinkMessageServiceImpl implements MessageService {
+public class WelinkMessageServiceImpl extends AbstractMessageService {
 
-
-    private BaseConParam baseConParam;
     private WelinkMessageServiceImpl () {
-
-        /**
-         * 初始化baseConParam todo
-         */
-        baseConParam = new BaseConParam();
 
     }
 
@@ -44,17 +36,23 @@ public class WelinkMessageServiceImpl implements MessageService {
     }
 
     @Override
-    public AdaRespParam send(AdaReqParam adaReqParam) {
+    public AdaRespParam send(AdaReqParam adaReqParam) throws IOException {
+
+        super.send(adaReqParam);
+
+        WelinkReqParam welinkReqParam = new WelinkReqParam(baseConParam,adaReqParam);
+
+        String result =  post(welinkReqParam);
 
         return null;
 
     }
 
 
-    public static String SMS(String postData, String postUrl) {
+    public static String post(WelinkReqParam welinkReqParam) {
         try {
             //发送POST请求
-            URL url = new URL(postUrl);
+            URL url = new URL(welinkReqParam.getPostUrl());
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("POST");
             conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
@@ -62,9 +60,9 @@ public class WelinkMessageServiceImpl implements MessageService {
             conn.setUseCaches(false);
             conn.setDoOutput(true);
 
-            conn.setRequestProperty("Content-Length", "" + postData.length());
+            conn.setRequestProperty("Content-Length", "" + welinkReqParam.getPostData().length());
             OutputStreamWriter out = new OutputStreamWriter(conn.getOutputStream(), "UTF-8");
-            out.write(postData);
+            out.write(welinkReqParam.getPostData());
             out.flush();
             out.close();
 

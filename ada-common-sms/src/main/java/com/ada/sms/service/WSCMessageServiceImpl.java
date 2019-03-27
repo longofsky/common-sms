@@ -2,7 +2,6 @@ package com.ada.sms.service;
 
 import com.ada.sms.params.AdaReqParam;
 import com.ada.sms.params.AdaRespParam;
-import com.ada.sms.params.BaseConParam;
 import com.ada.sms.params.WSCReqParam;
 import org.apache.commons.collections.MapUtils;
 import org.apache.commons.io.IOUtils;
@@ -17,7 +16,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 /**
- * @ProjectName: microservice-spring-cloud
+ * @ProjectName: ada-sms
  * @Package: com.adachina.sms.service
  * @ClassName: WSCMessageServiceImpl
  * @Author: litianlong
@@ -25,45 +24,33 @@ import java.util.*;
  * @Date: 2019-03-27 13:42
  * @Version: 1.0
  */
-public class WSCMessageServiceImpl implements MessageService {
-
-    private BaseConParam baseConParam;
+public class WSCMessageServiceImpl extends AbstractMessageService {
 
     private WSCMessageServiceImpl () {
 
-        /**
-         * 初始化baseConParam todo
-         */
-        baseConParam = new BaseConParam();
     }
 
     private static class WSCMessageServiceImplFactory {
-        private static WSCMessageServiceImpl baseConParam = new WSCMessageServiceImpl();
+        private static WSCMessageServiceImpl wscMessageService = new WSCMessageServiceImpl();
     }
 
     public static WSCMessageServiceImpl getInstance () {
 
-        return WSCMessageServiceImplFactory.baseConParam;
+        return WSCMessageServiceImplFactory.wscMessageService;
     }
 
     @Override
     public AdaRespParam send(AdaReqParam adaReqParam) throws IOException {
 
-        /**
-         * 异步持久化短信信息 todo
-         */
+        super.send(adaReqParam);
 
-        /**
-         * 根据baseConParam 和 adaReqParam 封装wscReqParam
-         */
-        WSCReqParam wscReqParam = new WSCReqParam();
+        WSCReqParam wscReqParam = new WSCReqParam(baseConParam,adaReqParam);
 
         String result = post(wscReqParam);
 
         /**
-         * 记录短信批次
+         * 封装返回参数 todo
          */
-
         return null;
     }
 

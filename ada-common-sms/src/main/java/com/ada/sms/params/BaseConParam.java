@@ -1,5 +1,10 @@
 package com.ada.sms.params;
 
+import com.ada.sms.constant.SmsApiMethodConstants;
+import com.ada.sms.enums.MessageServiceEnum;
+import com.ada.sms.service.WSCMessageServiceImpl;
+import com.ada.sms.service.WelinkMessageServiceImpl;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -16,7 +21,60 @@ import java.util.Map;
  */
 public class BaseConParam {
 
+    static MessageServiceEnum serviceEnum;
+
+    private WangSuCloudConParam wangSuCloudConParam;
+
+    private WelinkConParam welinkConParam;
+
+    private BaseConParam() {
+
+        /**
+         * 初始化运营商基础数据
+         */
+        if (serviceEnum != null) {
+
+            if (MessageServiceEnum.WSC.equals(serviceEnum)) {
+                wangSuCloudConParam = new WangSuCloudConParam();
+
+            } else if (MessageServiceEnum.WELINk.equals(serviceEnum)) {
+
+                welinkConParam = new WelinkConParam();
+            }
+
+        }
+    }
+
+    private static BaseConParam baseConParam;
+
+    private static class BaseConParamFactory {
+        private static BaseConParam baseConParam = new BaseConParam();
+    }
+
+    public static BaseConParam getBaseConParam (MessageServiceEnum messageServiceEnum) {
+
+        if (messageServiceEnum != null) {
+
+            serviceEnum = messageServiceEnum;
+        }
+
+       return BaseConParamFactory.baseConParam;
+    }
+
     public class WangSuCloudConParam {
+
+        private WangSuCloudConParam() {
+
+            init();
+        }
+
+        private void init(){
+
+            api = "https://sms.server.matocloud.com/sms/is/api/sms/simple"+ SmsApiMethodConstants.WSC_API_METHOD_SENDVARSMS;
+            authUser = "shadpz";
+            userKey = "FUAkZ3TQugd9qZKZ";
+            timestamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+        }
 
         /**
          * api地址
@@ -33,18 +91,7 @@ public class BaseConParam {
         /**
          * 时间戳
          */
-        private String timestamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
-        /**
-         *
-         */
-        private Map<String, Object> smsParam = new HashMap<>();
-        /**
-         *
-         */
-        private String smsJson;
-
-        private Map<String, String> authSignatureParam;
-
+        private String timestamp;
 
         public String getApi() {
             return api;
@@ -77,35 +124,29 @@ public class BaseConParam {
         public void setTimestamp(String timestamp) {
             this.timestamp = timestamp;
         }
-
-        public Map<String, Object> getSmsParam() {
-            return smsParam;
-        }
-
-        public void setSmsParam(Map<String, Object> smsParam) {
-            this.smsParam = smsParam;
-        }
-
-        public String getSmsJson() {
-            return smsJson;
-        }
-
-        public void setSmsJson(String smsJson) {
-            this.smsJson = smsJson;
-        }
-
-        public Map<String, String> getAuthSignatureParam() {
-            return authSignatureParam;
-        }
-
-        public void setAuthSignatureParam(Map<String, String> authSignatureParam) {
-            this.authSignatureParam = authSignatureParam;
-        }
     }
 
 
     public class WelinkConParam {
 
+        private WelinkConParam () {
+
+            init();
+        }
+        private void init(){
+
+            //todo
+            api= "http://jiekou.51welink.com/submitdata/service.asmx" + SmsApiMethodConstants.Welink_API_METHOD_g_Submit;
+            sname="sname=dllxceshi";
+            spwd="dllxceshi123";
+//            scorpid= null;
+            sprdid="1012888";
+        }
+
+        /**
+         * api地址
+         */
+        private String api;
         /**
          * 用户名
          */
@@ -122,8 +163,62 @@ public class BaseConParam {
          * 产品类型
          */
         private String sprdid;
+
+        public String getApi() {
+            return api;
+        }
+
+        public void setApi(String api) {
+            this.api = api;
+        }
+
+        public String getSname() {
+            return sname;
+        }
+
+        public void setSname(String sname) {
+            this.sname = sname;
+        }
+
+        public String getSpwd() {
+            return spwd;
+        }
+
+        public void setSpwd(String spwd) {
+            this.spwd = spwd;
+        }
+
+        public String getScorpid() {
+            return scorpid;
+        }
+
+        public void setScorpid(String scorpid) {
+            this.scorpid = scorpid;
+        }
+
+        public String getSprdid() {
+            return sprdid;
+        }
+
+        public void setSprdid(String sprdid) {
+            this.sprdid = sprdid;
+        }
     }
 
 
+    public WangSuCloudConParam getWangSuCloudConParam() {
+        return wangSuCloudConParam;
+    }
 
+    public void setWangSuCloudConParam(WangSuCloudConParam wangSuCloudConParam) {
+        this.wangSuCloudConParam = wangSuCloudConParam;
+    }
+
+    public WelinkConParam getWelinkConParam() {
+        return welinkConParam;
+    }
+
+    public void setWelinkConParam(WelinkConParam welinkConParam) {
+        this.welinkConParam = welinkConParam;
+    }
 }

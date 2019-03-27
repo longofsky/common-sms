@@ -1,13 +1,12 @@
 package com.ada.sms.service;
 
-import com.ada.sms.enums.MessageServiceEnum;
 import com.ada.sms.params.AdaReqParam;
 import com.ada.sms.params.AdaRespParam;
 
 import java.io.IOException;
 
 /**
- * @ProjectName: adachina-commons
+ * @ProjectName: ada-sms
  * @Package: com.adachina.um.sms.service
  * @ClassName: MessageService
  * @Author: litianlong

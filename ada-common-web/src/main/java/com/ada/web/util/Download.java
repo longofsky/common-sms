@@ -4,9 +4,6 @@ package com.ada.web.util;
  */
 
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
@@ -20,7 +17,6 @@ import java.io.IOException;
  * @Date ： 2017/11/12
  */
 public class Download {
-    private static final Logger logger = LoggerFactory.getLogger(Download.class);
 
     /**
      * 通用的下载文件方法
@@ -48,7 +44,7 @@ public class Download {
                 out.write(buffer, 0, index);
             }
         } catch (IOException e) {
-            logger.error("下载文件错误：", e);
+//            logger.error("下载文件错误：", e);
         }
     }
 

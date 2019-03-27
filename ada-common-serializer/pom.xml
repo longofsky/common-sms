@@ -6,12 +6,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.adachina.commons</groupId>
+        <groupId>com.ada.commons</groupId>
         <artifactId>ada-commons</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <groupId>com.adachina.common</groupId>
     <artifactId>ada-common-serializer</artifactId>
     <version>${ada-common-serializer.version}</version>
     <packaging>jar</packaging>
@@ -49,12 +48,7 @@
             <version>${fastjson.version}</version>
             <scope>compile</scope>
         </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>${slf4j-api.version}</version>
-            <scope>compile</scope>
-        </dependency>
+
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-redis</artifactId>
@@ -84,7 +78,7 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>com.adachina.common</groupId>
+            <groupId>com.ada.commons</groupId>
             <artifactId>ada-common</artifactId>
             <version>${ada-common.version}</version>
             <scope>compile</scope>

@@ -2,8 +2,6 @@ package com.ada.common.util;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.Validate;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.*;
 
@@ -20,8 +18,7 @@ public class ReflectionUtils {
 	private static final String GETTER_PREFIX = "get";
 
 	private static final String CGLIB_CLASS_SEPARATOR = "$$";
-	
-	private static Logger logger = LoggerFactory.getLogger(ReflectionUtils.class);
+
 
 	/**
 	 * 调用Getter方法.
@@ -68,7 +65,7 @@ public class ReflectionUtils {
 		try {
 			result = field.get(obj);
 		} catch (IllegalAccessException e) {
-			logger.error("不可能抛出的异常{}", e.getMessage());
+//			logger.error("不可能抛出的异常{}", e.getMessage());
 		}
 		return result;
 	}
@@ -80,14 +77,14 @@ public class ReflectionUtils {
 		Field field = getAccessibleField(obj, fieldName);
 
 		if (field == null) {
-			logger.error("Could not find field [" + fieldName + "] on target [" + obj + "]");
+//			logger.error("Could not find field [" + fieldName + "] on target [" + obj + "]");
 			return;
 			//throw new IllegalArgumentException("Could not find field [" + fieldName + "] on target [" + obj + "]");
 		}
 		try {
 			field.set(obj, convert(value, field.getType()));
 		} catch (IllegalAccessException e) {
-			logger.error("不可能抛出的异常:{}", e.getMessage());
+//			logger.error("不可能抛出的异常:{}", e.getMessage());
 		}
 	}
 	
@@ -274,19 +271,18 @@ public class ReflectionUtils {
 		Type genType = clazz.getGenericSuperclass();
 
 		if (!(genType instanceof ParameterizedType)) {
-			logger.warn(clazz.getSimpleName() + "'s superclass not ParameterizedType");
+//			logger.warn(clazz.getSimpleName() + "'s superclass not ParameterizedType");
 			return Object.class;
 		}
 
 		Type[] params = ((ParameterizedType) genType).getActualTypeArguments();
 
 		if (index >= params.length || index < 0) {
-			logger.warn("Index: " + index + ", Size of " + clazz.getSimpleName() + "'s Parameterized Type: "
-					+ params.length);
+//			logger.warn("Index: " + index + ", Size of " + clazz.getSimpleName() + "'s Parameterized Type: "+ params.length);
 			return Object.class;
 		}
 		if (!(params[index] instanceof Class)) {
-			logger.warn(clazz.getSimpleName() + " not set the actual class on superclass generic parameter");
+//			logger.warn(clazz.getSimpleName() + " not set the actual class on superclass generic parameter");
 			return Object.class;
 		}
 

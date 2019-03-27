@@ -6,19 +6,18 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.adachina.commons</groupId>
+        <groupId>com.ada.commons</groupId>
         <artifactId>ada-commons</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <groupId>com.adachina.web</groupId>
     <artifactId>ada-common-web</artifactId>
     <version>${ada-common-web.version}</version>
     <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
-            <groupId>com.adachina.common</groupId>
+            <groupId>com.ada.commons</groupId>
             <artifactId>ada-common</artifactId>
             <version>${ada-common.version}</version>
         </dependency>

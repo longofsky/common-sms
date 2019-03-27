@@ -11,9 +11,9 @@
 	<modules>
 
 		<module>ada-common</module>
-		<module>ada-job</module>
-		<module>ada-web</module>
-		<module>ada-sms</module>
+		<module>ada-common-job</module>
+		<module>ada-common-web</module>
+		<module>ada-common-sms</module>
         <module>ada-common-secure</module>
         <module>ada-common-serializer</module>
 
@@ -27,9 +27,9 @@
         <ada-common.version>0.0.1-SNAPSHOT</ada-common.version>
         <ada-common-secure.version>0.0.1-SNAPSHOT</ada-common-secure.version>
         <ada-common-serializer.version>0.0.1-SNAPSHOT</ada-common-serializer.version>
-        <ada-job.version>0.0.1-SNAPSHOT</ada-job.version>
-        <ada-web.version>0.0.1-SNAPSHOT</ada-web.version>
-        <ada-sms.version>0.0.1-SNAPSHOT</ada-sms.version>
+        <ada-common-job.version>0.0.1-SNAPSHOT</ada-common-job.version>
+        <ada-common-web.version>0.0.1-SNAPSHOT</ada-common-web.version>
+        <ada-common-sms.version>0.0.1-SNAPSHOT</ada-common-sms.version>
 
         <!--apache-->
         <commons-lang3.version>3.8.1</commons-lang3.version>
@@ -175,29 +175,5 @@
         </snapshotRepository>
     </distributionManagement>
 
-    <pluginRepositories>
-        <pluginRepository>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-            <id>ada-repo</id>
-            <name>ada nexus</name>
-            <url>http://maven.aliyun.com/nexus/content/groups/public</url>
-        </pluginRepository>
-        <pluginRepository>
-            <releases>
-                <updatePolicy>never</updatePolicy>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <id>central</id>
-            <name>Central Repository</name>
-            <url>https://repo.maven.apache.org/maven2</url>
-        </pluginRepository>
-    </pluginRepositories>
 
 </project>

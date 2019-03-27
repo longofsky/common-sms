@@ -12,8 +12,8 @@
     </parent>
 
     <groupId>com.adachina.job</groupId>
-    <artifactId>ada-job</artifactId>
-    <version>${ada-job.version}</version>
+    <artifactId>ada-common-job</artifactId>
+    <version>${ada-common-job.version}</version>
     <packaging>jar</packaging>
 
     <dependencies>

@@ -10,7 +10,7 @@
        http://www.ada.com/schema/ada-context http://www.ada.com/schema/ada-context-1.0.0.xsd
        http://www.springframework.org/schema/beans ">
 
-    <apollo:config namespaces="application,test-namespace"/>
+    <apollo:config namespaces="ada-commons"/>
     <!--<ada-context:config files="config/ada-context-config.properties,ada-context.properties"/>-->
 
     <context:annotation-config/>

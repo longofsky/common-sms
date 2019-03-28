@@ -8,31 +8,31 @@ import java.util.Date;
 /**
  * @ProjectName: ada-sms
  * @Package: com.adachina.sms.entitys
- * @ClassName: BaseConParam
+ * @ClassName: BaseConnEnvironment
  * @Author: litianlong
  * @Description: ${description}
  * @Date: 2019-03-27 10:35
  * @Version: 1.0
  */
-public class BaseConParam {
+public class BaseConnEnvironment {
 
     private WangSuCloudConParam wangSuCloudConParam;
 
     private WelinkConParam welinkConParam;
 
-    private BaseConParam() {
+    private BaseConnEnvironment() {
 
     }
 
-    private static BaseConParam baseConParam;
+    private static BaseConnEnvironment baseConnEnvironment;
 
     private static class BaseConParamFactory {
-        private static BaseConParam baseConParam = new BaseConParam();
+        private static BaseConnEnvironment baseConnEnvironment = new BaseConnEnvironment();
     }
 
-    public static BaseConParam getBaseConParam () {
+    public static BaseConnEnvironment getBaseConnEnvironment() {
 
-       return BaseConParamFactory.baseConParam;
+       return BaseConParamFactory.baseConnEnvironment;
     }
 
     public class WangSuCloudConParam {
@@ -44,7 +44,7 @@ public class BaseConParam {
 
         private void init(){
 
-            api = "https://sms.server.matocloud.com/sms/is/api/sms/simple"+ SmsApiMethodConstants.WSC_API_METHOD_SENDVARSMS;
+            api = "https://sms.server.matocloud.com/sms/is/api/sms/simple";
             authUser = "shadpz";
             userKey = "FUAkZ3TQugd9qZKZ";
             timestamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());

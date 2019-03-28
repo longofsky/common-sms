@@ -2,7 +2,7 @@ package com.ada.common.sms.service;
 
 import com.ada.common.sms.entitys.AdaReqParam;
 import com.ada.common.sms.entitys.AdaRespParam;
-import com.ada.common.sms.entitys.BaseConParam;
+import com.ada.common.sms.entitys.BaseConnEnvironment;
 import com.ada.common.sms.entitys.WSCReqParam;
 import org.apache.commons.collections.MapUtils;
 import org.apache.commons.io.IOUtils;
@@ -37,7 +37,7 @@ public class WSCMessageServiceImpl extends AbstractMessageService {
 
     public static WSCMessageServiceImpl getInstance () {
 
-        BaseConParam.getBaseConParam().getWangSuCloudConParam();
+        BaseConnEnvironment.getBaseConnEnvironment().getWangSuCloudConParam();
 
         return WSCMessageServiceImplFactory.wscMessageService;
     }
@@ -46,7 +46,7 @@ public class WSCMessageServiceImpl extends AbstractMessageService {
     public AdaRespParam sendMessageContent(AdaReqParam adaReqParam) throws IOException {
 
         super.sendMessageContent(adaReqParam);
-        WSCReqParam wscReqParam = new WSCReqParam(baseConParam,adaReqParam);
+        WSCReqParam wscReqParam = new WSCReqParam(baseConnEnvironment,adaReqParam);
 
         String result = post(wscReqParam);
 
@@ -100,25 +100,6 @@ public class WSCMessageServiceImpl extends AbstractMessageService {
         }
 
         return result.toString();
-    }
-
-    public static String generateSignData(Map<String, String> params) {
-        List<String> keys = new ArrayList<>();
-        for (Map.Entry<String, String> entry : params.entrySet()) {
-            keys.add(entry.getKey());
-        }
-        //按参数名从小到大排序
-        Collections.sort(keys, new Comparator<String>() {
-            @Override
-            public int compare(String o1, String o2) {
-                return o1.compareTo(o2);
-            }
-        });
-        List<String> data = new ArrayList<>();
-        for (String key : keys) {
-            data.add(key + "=" + params.get(key));
-        }
-        return StringUtils.join(data, "&");
     }
 
 }

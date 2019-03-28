@@ -2,7 +2,7 @@ package com.ada.common.sms.service;
 
 import com.ada.common.sms.entitys.AdaReqParam;
 import com.ada.common.sms.entitys.AdaRespParam;
-import com.ada.common.sms.entitys.BaseConParam;
+import com.ada.common.sms.entitys.BaseConnEnvironment;
 
 import java.io.IOException;
 
@@ -18,11 +18,11 @@ import java.io.IOException;
 public abstract class AbstractMessageService implements MessageService {
 
 
-    public BaseConParam baseConParam;
+    public BaseConnEnvironment baseConnEnvironment;
 
     public AbstractMessageService() {
 
-        baseConParam = BaseConParam.getBaseConParam();
+        baseConnEnvironment = BaseConnEnvironment.getBaseConnEnvironment();
 
     }
 

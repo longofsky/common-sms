@@ -13,13 +13,13 @@ import java.io.UnsupportedEncodingException;
  */
 public abstract class AbstractSmsReqParam {
 
-    public BaseConParam baseConParam;
+    public BaseConnEnvironment baseConnEnvironment;
 
     public AdaReqParam adaReqParam;
 
-    public AbstractSmsReqParam(BaseConParam baseConParam, AdaReqParam adaReqParam) throws UnsupportedEncodingException {
+    public AbstractSmsReqParam(BaseConnEnvironment baseConnEnvironment, AdaReqParam adaReqParam) throws UnsupportedEncodingException {
 
-        this.baseConParam = baseConParam;
+        this.baseConnEnvironment = baseConnEnvironment;
         this.adaReqParam = adaReqParam;
         init();
     }

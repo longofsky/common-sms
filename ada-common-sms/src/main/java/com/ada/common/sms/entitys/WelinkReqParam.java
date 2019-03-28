@@ -17,8 +17,8 @@ public class WelinkReqParam extends AbstractSmsReqParam{
 
 
 
-    public WelinkReqParam (BaseConParam baseConParam,AdaReqParam adaReqParam) throws UnsupportedEncodingException {
-        super(baseConParam,adaReqParam);
+    public WelinkReqParam (BaseConnEnvironment baseConnEnvironment, AdaReqParam adaReqParam) throws UnsupportedEncodingException {
+        super(baseConnEnvironment,adaReqParam);
     }
 
     /**
@@ -34,20 +34,20 @@ public class WelinkReqParam extends AbstractSmsReqParam{
         StringBuilder postDataBuilder = new StringBuilder();
         postDataBuilder.append("sname=");
 
-        if (StringUtils.isNotEmpty(baseConParam.getWelinkConParam().getSname())) {
-            postDataBuilder.append(baseConParam.getWelinkConParam().getSname());
+        if (StringUtils.isNotEmpty(baseConnEnvironment.getWelinkConParam().getSname())) {
+            postDataBuilder.append(baseConnEnvironment.getWelinkConParam().getSname());
         }
         postDataBuilder.append("&spwd=");
-        if (StringUtils.isNotEmpty(baseConParam.getWelinkConParam().getSpwd())) {
-            postDataBuilder.append(baseConParam.getWelinkConParam().getSpwd());
+        if (StringUtils.isNotEmpty(baseConnEnvironment.getWelinkConParam().getSpwd())) {
+            postDataBuilder.append(baseConnEnvironment.getWelinkConParam().getSpwd());
         }
         postDataBuilder.append("&scorpid=");
-        if (StringUtils.isNotEmpty(baseConParam.getWelinkConParam().getScorpid())) {
-            postDataBuilder.append(baseConParam.getWelinkConParam().getScorpid());
+        if (StringUtils.isNotEmpty(baseConnEnvironment.getWelinkConParam().getScorpid())) {
+            postDataBuilder.append(baseConnEnvironment.getWelinkConParam().getScorpid());
         }
         postDataBuilder.append("&sprdid=");
-        if (StringUtils.isNotEmpty(baseConParam.getWelinkConParam().getSprdid())) {
-            postDataBuilder.append(baseConParam.getWelinkConParam().getSprdid());
+        if (StringUtils.isNotEmpty(baseConnEnvironment.getWelinkConParam().getSprdid())) {
+            postDataBuilder.append(baseConnEnvironment.getWelinkConParam().getSprdid());
         }
         postDataBuilder.append("&sdst=");
         if (StringUtils.isNotEmpty(adaReqParam.getPhone())) {
@@ -58,7 +58,7 @@ public class WelinkReqParam extends AbstractSmsReqParam{
             postDataBuilder.append(java.net.URLEncoder.encode(adaReqParam.getContent()));
         }
         this.postData = postDataBuilder.toString();
-        this.postUrl = baseConParam.getWelinkConParam().getApi();
+        this.postUrl = baseConnEnvironment.getWelinkConParam().getApi();
     }
 
     public String getPostData() {

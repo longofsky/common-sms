@@ -1,6 +1,6 @@
 package com.ada.common.sms.service;
 
-import com.ada.common.sms.entitys.BaseConParam;
+import com.ada.common.sms.entitys.BaseConnEnvironment;
 import com.ada.common.sms.entitys.WelinkReqParam;
 import com.ada.common.sms.entitys.AdaReqParam;
 import com.ada.common.sms.entitys.AdaRespParam;
@@ -33,7 +33,7 @@ public class WelinkMessageServiceImpl extends AbstractMessageService {
 
     public static WelinkMessageServiceImpl getInstance () {
 
-        BaseConParam.getBaseConParam().getWelinkConParam();
+        BaseConnEnvironment.getBaseConnEnvironment().getWelinkConParam();
 
         return WelinkMessageServiceImplFactory.welinkMessageService;
     }
@@ -43,7 +43,7 @@ public class WelinkMessageServiceImpl extends AbstractMessageService {
 
         super.sendMessageContent(adaReqParam);
 
-        WelinkReqParam welinkReqParam = new WelinkReqParam(baseConParam,adaReqParam);
+        WelinkReqParam welinkReqParam = new WelinkReqParam(baseConnEnvironment,adaReqParam);
 
         String result =  post(welinkReqParam);
 

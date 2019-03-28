@@ -24,7 +24,8 @@ public class AdaSmsTest {
         AdaReqParam adaReqParam = new AdaReqParam();
 
         adaReqParam.setType(2);
-        adaReqParam.setContent("您的验证码是：25129。请不要把验证码泄露给其他人。【微网通联】");
+        adaReqParam.setContent("【Ada健康】您的验证码是：25129。请不要把验证码泄露给其他人");
+//        adaReqParam.setContent("您的验证码是：25129。请不要把验证码泄露给其他人。【微网通联】");
 
         String [] param = new String[2];
         param[0] = "121247";
@@ -32,7 +33,7 @@ public class AdaSmsTest {
         adaReqParam.setParam(param);
 
         adaReqParam.setPhone("15527248869");
-        adaReqParam.setTemplateId("55005");
+//        adaReqParam.setTemplateId("55005");
 
 
         MessageService messageService = MessageServiceFactory.getMessageService(MessageServiceEnum.WSC);

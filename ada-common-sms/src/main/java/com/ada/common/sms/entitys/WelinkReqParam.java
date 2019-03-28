@@ -4,9 +4,9 @@ import com.ada.common.sms.entitys.abstractentitys.AbstractAdaSmsReqParam;
 import com.ada.common.sms.entitys.abstractentitys.AbstractSmsReqParam;
 import com.ada.common.sms.environment.BaseConnEnvironment;
 import org.apache.commons.lang.StringUtils;
-import sun.security.action.GetPropertyAction;
 
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 
 /**
  * @ProjectName: ada-sms
@@ -62,7 +62,7 @@ public class WelinkReqParam extends AbstractSmsReqParam {
         }
         postDataBuilder.append("&smsg=");
         if (StringUtils.isNotEmpty(welinkAdaSmsReqParam.getContent())) {
-            postDataBuilder.append(java.net.URLEncoder.encode(welinkAdaSmsReqParam.getContent(), GetPropertyAction.privilegedGetProperty("file.encoding")));
+            postDataBuilder.append(java.net.URLEncoder.encode(welinkAdaSmsReqParam.getContent(),StandardCharsets.UTF_8.name()));
         }
         this.postData = postDataBuilder.toString();
         this.postUrl = baseConnEnvironment.getWelinkConParam().getApi();

@@ -1,9 +1,9 @@
 package com.ada.common.sms.service;
 
-import com.ada.common.sms.params.BaseConParam;
-import com.ada.common.sms.params.WelinkReqParam;
-import com.ada.common.sms.params.AdaReqParam;
-import com.ada.common.sms.params.AdaRespParam;
+import com.ada.common.sms.entitys.BaseConParam;
+import com.ada.common.sms.entitys.WelinkReqParam;
+import com.ada.common.sms.entitys.AdaReqParam;
+import com.ada.common.sms.entitys.AdaRespParam;
 
 import java.io.BufferedReader;
 import java.io.IOException;

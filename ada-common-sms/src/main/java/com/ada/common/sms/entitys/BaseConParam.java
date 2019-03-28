@@ -1,14 +1,13 @@
-package com.ada.common.sms.params;
+package com.ada.common.sms.entitys;
 
 import com.ada.common.sms.constant.SmsApiMethodConstants;
-import com.ada.common.sms.enums.MessageServiceEnum;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
  * @ProjectName: ada-sms
- * @Package: com.adachina.sms.params
+ * @Package: com.adachina.sms.entitys
  * @ClassName: BaseConParam
  * @Author: litianlong
  * @Description: ${description}

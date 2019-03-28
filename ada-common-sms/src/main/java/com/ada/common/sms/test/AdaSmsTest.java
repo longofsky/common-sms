@@ -3,7 +3,7 @@ package com.ada.common.sms.test;
 import com.ada.common.sms.enums.MessageServiceEnum;
 import com.ada.common.sms.factory.MessageServiceFactory;
 import com.ada.common.sms.service.MessageService;
-import com.ada.common.sms.params.AdaReqParam;
+import com.ada.common.sms.entitys.AdaReqParam;
 
 import java.io.IOException;
 

@@ -118,9 +118,9 @@
 //        return result.toString();
 //    }
 //
-//    public static String generateSignData(Map<String, String> params) {
+//    public static String generateSignData(Map<String, String> entitys) {
 //        List<String> keys = new ArrayList<>();
-//        for (Map.Entry<String, String> entry : params.entrySet()) {
+//        for (Map.Entry<String, String> entry : entitys.entrySet()) {
 //            keys.add(entry.getKey());
 //        }
 //        //按参数名从小到大排序
@@ -132,7 +132,7 @@
 //        });
 //        List<String> data = new ArrayList<>();
 //        for (String key : keys) {
-//            data.add(key + "=" + params.get(key));
+//            data.add(key + "=" + entitys.get(key));
 //        }
 //        return StringUtils.join(data, "&");
 //    }

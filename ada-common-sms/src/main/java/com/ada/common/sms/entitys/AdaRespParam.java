@@ -1,8 +1,8 @@
-package com.ada.common.sms.params;
+package com.ada.common.sms.entitys;
 
 /**
  * @ProjectName: ada-sms
- * @Package: com.adachina.sms.params
+ * @Package: com.adachina.sms.entitys
  * @ClassName: WSCReqParam
  * @Author: litianlong
  * @Description: ${description}

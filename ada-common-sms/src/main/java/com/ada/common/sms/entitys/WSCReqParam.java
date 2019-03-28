@@ -1,4 +1,4 @@
-package com.ada.common.sms.params;
+package com.ada.common.sms.entitys;
 
 import com.alibaba.fastjson.JSON;
 import org.apache.commons.codec.digest.DigestUtils;
@@ -11,7 +11,7 @@ import java.util.*;
 
 /**
  * @ProjectName: ada-sms
- * @Package: com.adachina.sms.params
+ * @Package: com.adachina.sms.entitys
  * @ClassName: WSCReqParam
  * @Author: litianlong
  * @Description: ${description}

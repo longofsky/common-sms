@@ -1,7 +1,9 @@
 package com.ada.common.sms.entitys;
 
 import com.ada.common.sms.entitys.abstractentitys.AbstractAdaSmsReqParam;
+import com.alibaba.fastjson.JSON;
 
+import java.io.Serializable;
 import java.util.Arrays;
 
 /**
@@ -9,11 +11,11 @@ import java.util.Arrays;
  * @Package: com.adachina.sms.entitys
  * @ClassName: WSCReqParam
  * @Author: litianlong
- * @Description: ${description}
+ * @Description: 以网宿云为服务封装的短信接口入参
  * @Date: 2019-03-27 10:51
  * @Version: 1.0
  */
-public class WSCAdaSmsReqParam extends AbstractAdaSmsReqParam {
+public class WSCAdaSmsReqParam extends AbstractAdaSmsReqParam  implements Serializable {
 
     /**
      * 短信类型 type:业务类型 ，必填，整型， 1-营销短信，2-行业短信【比如验证码】
@@ -55,12 +57,6 @@ public class WSCAdaSmsReqParam extends AbstractAdaSmsReqParam {
 
     @Override
     public String toString() {
-        return "AdaReqParam{" +
-                "type=" + type +
-                ", content='" + content + '\'' +
-                ", templateId='" + templateId + '\'' +
-                ", param=" + Arrays.toString(param) +
-                ", phone='" + phone + '\'' +
-                '}';
+        return JSON.toJSONString(this);
     }
 }

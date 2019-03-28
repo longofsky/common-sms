@@ -2,6 +2,7 @@ package com.ada.common.sms.service;
 
 
 import com.ada.common.sms.entitys.WSCAdaSmsReqParam;
+import com.ada.common.sms.entitys.WSCRespReport;
 import com.ada.common.sms.enums.MessageServiceEnum;
 import com.ada.common.sms.factory.MessageServiceFactory;
 import org.junit.jupiter.api.Test;
@@ -48,7 +49,9 @@ public class WSCMessageServiceImplTest {
 
         MessageService messageService = MessageServiceFactory.getMessageService(MessageServiceEnum.WSC);
 
-        messageService.getSmsReport();
+        WSCRespReport wscRespReport = messageService.getSmsReport();
+
+        System.out.println(wscRespReport.toString());
 
     }
 }

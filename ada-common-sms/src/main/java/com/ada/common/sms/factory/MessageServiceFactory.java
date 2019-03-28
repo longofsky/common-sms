@@ -10,7 +10,7 @@ import com.ada.common.sms.service.WelinkMessageServiceImpl;
  * @Package: com.adachina.um.sms.factory
  * @ClassName: MessageServiceFactory
  * @Author: litianlong
- * @Description: ${description}
+ * @Description: 服务工厂类
  * @Date: 2019-03-25 15:47
  * @Version: 1.0
  */

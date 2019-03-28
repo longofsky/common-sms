@@ -1,7 +1,7 @@
 package com.ada.common.sms.service;
 
+import com.ada.common.sms.entitys.WSCRespReport;
 import com.ada.common.sms.entitys.abstractentitys.AbstractAdaSmsReqParam;
-import com.ada.common.sms.entitys.AdaRespParam;
 import com.ada.common.sms.environment.BaseConnEnvironment;
 
 import java.io.IOException;
@@ -11,7 +11,7 @@ import java.io.IOException;
  * @Package: com.adachina.sms.service
  * @ClassName: WSCMessageServiceImpl
  * @Author: litianlong
- * @Description: ${description}
+ * @Description: 短信服务定义抽象类
  * @Date: 2019-03-27 13:42
  * @Version: 1.0
  */
@@ -36,7 +36,8 @@ public abstract class AbstractMessageService implements MessageService {
     }
 
     @Override
-    public void getSmsReport () throws IOException {
+    public WSCRespReport getSmsReport () throws IOException {
 
+        return null;
     }
 }

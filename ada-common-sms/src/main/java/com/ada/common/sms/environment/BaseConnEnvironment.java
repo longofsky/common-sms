@@ -10,7 +10,7 @@ import java.util.Date;
  * @Package: com.adachina.sms.entitys
  * @ClassName: BaseConnEnvironment
  * @Author: litianlong
- * @Description: ${description}
+ * @Description: 短信服务初始化环境
  * @Date: 2019-03-27 10:35
  * @Version: 1.0
  */

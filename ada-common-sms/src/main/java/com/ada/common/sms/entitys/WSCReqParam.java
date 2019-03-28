@@ -8,6 +8,7 @@ import com.alibaba.fastjson.JSON;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang.StringUtils;
 
+import java.io.Serializable;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
@@ -18,11 +19,11 @@ import java.util.*;
  * @Package: com.adachina.sms.entitys
  * @ClassName: WSCReqParam
  * @Author: litianlong
- * @Description: ${description}
+ * @Description: 网宿云接口请求参数
  * @Date: 2019-03-27 10:51
  * @Version: 1.0
  */
-public class WSCReqParam extends AbstractSmsReqParam {
+public class WSCReqParam extends AbstractSmsReqParam  implements Serializable {
 
     private WSCAdaSmsReqParam wscAdaSmsReqParam;
 
@@ -134,4 +135,8 @@ public class WSCReqParam extends AbstractSmsReqParam {
         return StringUtils.join(data, "&");
     }
 
+    @Override
+    public String toString() {
+        return JSON.toJSONString(this);
+    }
 }

@@ -1,9 +1,11 @@
 package com.ada.common.sms.service;
 
+import com.ada.common.sms.entitys.WSCResp;
+import com.ada.common.sms.entitys.WSCRespReport;
 import com.ada.common.sms.entitys.abstractentitys.AbstractAdaSmsReqParam;
-import com.ada.common.sms.entitys.AdaRespParam;
 import com.ada.common.sms.environment.BaseConnEnvironment;
 import com.ada.common.sms.entitys.WSCReqParam;
+import com.alibaba.fastjson.JSON;
 import org.apache.commons.collections.MapUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
@@ -11,7 +13,6 @@ import org.apache.commons.lang.StringUtils;
 import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
@@ -22,7 +23,7 @@ import java.util.*;
  * @Package: com.adachina.sms.service
  * @ClassName: WSCMessageServiceImpl
  * @Author: litianlong
- * @Description: ${description}
+ * @Description: 网速运服务
  * @Date: 2019-03-27 13:42
  * @Version: 1.0
  */
@@ -31,6 +32,12 @@ public class WSCMessageServiceImpl extends AbstractMessageService {
     private WSCMessageServiceImpl () {
 
     }
+
+
+    private static final Integer SENDMESSAGECONTENT_TRUE = 1;
+
+    private static final Integer SENDMESSAGECONTENT_FALSE = 0;
+
 
     private static class WSCMessageServiceImplFactory {
         private static WSCMessageServiceImpl wscMessageService = new WSCMessageServiceImpl();
@@ -53,19 +60,30 @@ public class WSCMessageServiceImpl extends AbstractMessageService {
 
         System.out.println(result);
 
-        /**
-         * 封装返回参数 todo
-         */
-        return null;
+        WSCResp wscResp = JSON.parseObject(result, WSCResp.class);
+
+        if (wscResp == null) {
+
+            return false;
+        }
+        if (SENDMESSAGECONTENT_TRUE.equals(wscResp.getReturnCode())) {
+
+            return true;
+        }
+
+        return false;
     }
     @Override
-    public void getSmsReport () throws IOException {
+    public WSCRespReport getSmsReport () throws IOException {
 
         WSCReqParam wscReqParam = new WSCReqParam(baseConnEnvironment,null);
 
         String result = post(wscReqParam);
 
         System.out.println(result);
+
+        return JSON.parseObject(result, WSCRespReport.class);
+
 
     }
 

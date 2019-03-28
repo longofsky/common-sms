@@ -1,7 +1,7 @@
 package com.ada.common.sms.service;
 
+import com.ada.common.sms.entitys.WSCRespReport;
 import com.ada.common.sms.entitys.abstractentitys.AbstractAdaSmsReqParam;
-import com.ada.common.sms.entitys.AdaRespParam;
 
 import java.io.IOException;
 
@@ -10,7 +10,7 @@ import java.io.IOException;
  * @Package: com.adachina.um.sms.service
  * @ClassName: MessageService
  * @Author: litianlong
- * @Description: ${description}
+ * @Description: 短信服务定义接口
  * @Date: 2019-03-25 15:45
  * @Version: 1.0
  */
@@ -39,7 +39,7 @@ public interface MessageService {
      * @Version 1.0
      * @Date 2019-03-28 18:22
      */
-    public void getSmsReport () throws IOException;
+    public WSCRespReport getSmsReport () throws IOException;
 
 
 }

@@ -1,23 +1,38 @@
 package com.ada.common.sms.entitys;
 
+import com.alibaba.fastjson.JSON;
+
+import java.io.Serializable;
+
 /**
- * @ProjectName: microservice-spring-cloud
+ * @ProjectName: ada-sms
  * @Package: com.ada.common.sms.entitys
  * @ClassName: WSCResp
  * @Author: litianlong
- * @Description: ${description}
+ * @Description: 网宿云发送短信接口返回参数
  * @Date: 2019-03-28 17:40
  * @Version: 1.0
  */
-public class WSCRespResult {
+public class WSCRespResult  implements Serializable {
 
-
+    /**
+     * 状态码
+     */
     private Integer code;
 
+    /**
+     * 手机号
+     */
     private String phone;
 
+    /**
+     * 信息ID
+     */
     private String msgId;
 
+    /**
+     * 状态描述
+     */
     private String msg;
 
     public Integer getCode() {
@@ -54,11 +69,6 @@ public class WSCRespResult {
 
     @Override
     public String toString() {
-        return "WSCRespResult{" +
-                "code=" + code +
-                ", phone='" + phone + '\'' +
-                ", msgId='" + msgId + '\'' +
-                ", msg='" + msg + '\'' +
-                '}';
+        return JSON.toJSONString(this);
     }
 }

@@ -1,5 +1,7 @@
 package com.ada.common.sms.entitys.abstractentitys;
 
+import com.alibaba.fastjson.JSON;
+
 import java.util.Arrays;
 
 /**
@@ -7,7 +9,7 @@ import java.util.Arrays;
  * @Package: com.adachina.sms.entitys
  * @ClassName: WSCReqParam
  * @Author: litianlong
- * @Description: ${description}
+ * @Description: 短信服务商 共有参数
  * @Date: 2019-03-27 10:51
  * @Version: 1.0
  */
@@ -40,9 +42,6 @@ public abstract class AbstractAdaSmsReqParam {
 
     @Override
     public String toString() {
-        return "AbstractAdaSmsReqParam{" +
-                "content='" + content + '\'' +
-                ", phone='" + phone + '\'' +
-                '}';
+        return JSON.toJSONString(this);
     }
 }

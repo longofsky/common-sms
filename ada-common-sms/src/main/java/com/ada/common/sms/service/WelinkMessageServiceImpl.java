@@ -3,7 +3,6 @@ package com.ada.common.sms.service;
 import com.ada.common.sms.entitys.abstractentitys.AbstractAdaSmsReqParam;
 import com.ada.common.sms.environment.BaseConnEnvironment;
 import com.ada.common.sms.entitys.WelinkReqParam;
-import com.ada.common.sms.entitys.AdaRespParam;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -17,7 +16,7 @@ import java.net.URL;
  * @Package: com.adachina.sms.service
  * @ClassName: WSCMessageServiceImpl
  * @Author: litianlong
- * @Description: ${description}
+ * @Description: 微网通连服务
  * @Date: 2019-03-27 13:42
  * @Version: 1.0
  */

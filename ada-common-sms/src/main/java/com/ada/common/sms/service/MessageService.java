@@ -1,7 +1,7 @@
-package com.ada.sms.service;
+package com.ada.common.sms.service;
 
-import com.ada.sms.params.AdaReqParam;
-import com.ada.sms.params.AdaRespParam;
+import com.ada.common.sms.params.AdaReqParam;
+import com.ada.common.sms.params.AdaRespParam;
 
 import java.io.IOException;
 
@@ -26,6 +26,6 @@ public interface MessageService {
      * @Exception
      * @Date 2019-03-27 13:42
      */
-    public AdaRespParam send(AdaReqParam adaReqParam) throws IOException;
+    public AdaRespParam sendMessageContent(AdaReqParam adaReqParam) throws IOException;
 
 }

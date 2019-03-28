@@ -1,4 +1,4 @@
-package com.ada.sms.params;
+package com.ada.common.sms.params;
 
 import java.util.Arrays;
 

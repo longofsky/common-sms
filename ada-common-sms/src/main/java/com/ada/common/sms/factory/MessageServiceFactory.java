@@ -1,10 +1,10 @@
-package com.ada.sms.factory;
+package com.ada.common.sms.factory;
 
-import com.ada.sms.enums.MessageServiceEnum;
-import com.ada.sms.params.BaseConParam;
-import com.ada.sms.service.MessageService;
-import com.ada.sms.service.WSCMessageServiceImpl;
-import com.ada.sms.service.WelinkMessageServiceImpl;
+import com.ada.common.sms.enums.MessageServiceEnum;
+import com.ada.common.sms.params.BaseConParam;
+import com.ada.common.sms.service.MessageService;
+import com.ada.common.sms.service.WSCMessageServiceImpl;
+import com.ada.common.sms.service.WelinkMessageServiceImpl;
 
 /**
  * @ProjectName: ada-sms

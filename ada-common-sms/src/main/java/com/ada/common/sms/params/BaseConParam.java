@@ -1,14 +1,10 @@
-package com.ada.sms.params;
+package com.ada.common.sms.params;
 
-import com.ada.sms.constant.SmsApiMethodConstants;
-import com.ada.sms.enums.MessageServiceEnum;
-import com.ada.sms.service.WSCMessageServiceImpl;
-import com.ada.sms.service.WelinkMessageServiceImpl;
+import com.ada.common.sms.constant.SmsApiMethodConstants;
+import com.ada.common.sms.enums.MessageServiceEnum;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @ProjectName: ada-sms

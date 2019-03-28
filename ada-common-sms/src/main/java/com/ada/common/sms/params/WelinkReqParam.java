@@ -1,9 +1,8 @@
-package com.ada.sms.params;
+package com.ada.common.sms.params;
 
 import org.apache.commons.lang.StringUtils;
 
 import java.io.UnsupportedEncodingException;
-import java.util.*;
 
 /**
  * @ProjectName: ada-sms

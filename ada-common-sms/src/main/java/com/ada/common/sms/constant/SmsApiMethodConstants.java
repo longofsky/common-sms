@@ -1,4 +1,4 @@
-package com.ada.sms.constant;
+package com.ada.common.sms.constant;
 
 /**
  * @ProjectName: ada-sms

@@ -1,16 +1,10 @@
-package com.ada.sms.service;
+package com.ada.common.sms.service;
 
-import com.ada.sms.params.AdaReqParam;
-import com.ada.sms.params.AdaRespParam;
-import com.ada.sms.params.BaseConParam;
-import com.ada.sms.params.WelinkReqParam;
+import com.ada.common.sms.params.AdaReqParam;
+import com.ada.common.sms.params.AdaRespParam;
+import com.ada.common.sms.params.BaseConParam;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.net.HttpURLConnection;
-import java.net.URL;
 
 /**
  * @ProjectName: ada-sms
@@ -33,7 +27,7 @@ public abstract class AbstractMessageService implements MessageService {
     }
 
     @Override
-    public AdaRespParam send(AdaReqParam adaReqParam) throws IOException  {
+    public AdaRespParam sendMessageContent(AdaReqParam adaReqParam) throws IOException  {
 
         /**
          * 异步持久化短信信息 todo

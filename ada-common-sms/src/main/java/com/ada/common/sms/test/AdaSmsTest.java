@@ -1,9 +1,9 @@
-package com.ada.sms.test;
+package com.ada.common.sms.test;
 
-import com.ada.sms.enums.MessageServiceEnum;
-import com.ada.sms.factory.MessageServiceFactory;
-import com.ada.sms.params.AdaReqParam;
-import com.ada.sms.service.MessageService;
+import com.ada.common.sms.enums.MessageServiceEnum;
+import com.ada.common.sms.factory.MessageServiceFactory;
+import com.ada.common.sms.service.MessageService;
+import com.ada.common.sms.params.AdaReqParam;
 
 import java.io.IOException;
 

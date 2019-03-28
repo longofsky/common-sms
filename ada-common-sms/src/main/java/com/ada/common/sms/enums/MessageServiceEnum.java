@@ -1,4 +1,4 @@
-package com.ada.sms.enums;
+package com.ada.common.sms.enums;
 
 /**
  * @ProjectName: ada-sms

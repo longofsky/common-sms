@@ -27,11 +27,16 @@ public abstract class AbstractMessageService implements MessageService {
     }
 
     @Override
-    public AdaRespParam sendMessageContent(AbstractAdaSmsReqParam adaReqParam) throws IOException  {
+    public Boolean sendMessageContent(AbstractAdaSmsReqParam adaReqParam) throws IOException  {
 
         /**
          * 异步持久化短信信息 todo
          */
         return null;
+    }
+
+    @Override
+    public void getSmsReport () throws IOException {
+
     }
 }

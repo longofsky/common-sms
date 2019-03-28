@@ -39,7 +39,7 @@ public class WelinkMessageServiceImpl extends AbstractMessageService {
     }
 
     @Override
-    public AdaRespParam sendMessageContent(AbstractAdaSmsReqParam adaReqParam) throws IOException {
+    public Boolean sendMessageContent(AbstractAdaSmsReqParam adaReqParam) throws IOException {
 
         super.sendMessageContent(adaReqParam);
 

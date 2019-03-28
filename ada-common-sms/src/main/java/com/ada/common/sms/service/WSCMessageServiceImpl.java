@@ -11,6 +11,7 @@ import org.apache.commons.lang.StringUtils;
 import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
@@ -43,7 +44,7 @@ public class WSCMessageServiceImpl extends AbstractMessageService {
     }
 
     @Override
-    public AdaRespParam sendMessageContent(AbstractAdaSmsReqParam adaReqParam) throws IOException {
+    public Boolean sendMessageContent(AbstractAdaSmsReqParam adaReqParam) throws IOException {
 
         super.sendMessageContent(adaReqParam);
         WSCReqParam wscReqParam = new WSCReqParam(baseConnEnvironment,adaReqParam);
@@ -56,6 +57,16 @@ public class WSCMessageServiceImpl extends AbstractMessageService {
          * 封装返回参数 todo
          */
         return null;
+    }
+    @Override
+    public void getSmsReport () throws IOException {
+
+        WSCReqParam wscReqParam = new WSCReqParam(baseConnEnvironment,null);
+
+        String result = post(wscReqParam);
+
+        System.out.println(result);
+
     }
 
     private static String post(WSCReqParam wscReqParam) throws IOException {

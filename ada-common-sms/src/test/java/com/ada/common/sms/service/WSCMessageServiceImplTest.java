@@ -35,11 +35,20 @@ public class WSCMessageServiceImplTest {
         adaReqParam.setParam(param);
 
         adaReqParam.setPhone("15527248869");
-//        adaReqParam.setTemplateId("55005");
+//        adaReqParam.setTemplateId("55006");
 
         MessageService messageService = MessageServiceFactory.getMessageService(MessageServiceEnum.WSC);
 
         messageService.sendMessageContent(adaReqParam);
+
+    }
+
+    @Test
+    public void testGetSmsReport () throws IOException {
+
+        MessageService messageService = MessageServiceFactory.getMessageService(MessageServiceEnum.WSC);
+
+        messageService.getSmsReport();
 
     }
 }

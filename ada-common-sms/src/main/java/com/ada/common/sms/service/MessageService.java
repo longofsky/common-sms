@@ -23,11 +23,23 @@ public interface MessageService {
      * @Author litianlong
      * @Version 1.0
      * @param adaReqParam
-     * @return  AdaRespParam
+     * @return  Boolean
      * @throws IOException
      * @Date 2019-03-27 13:42
      *
      */
-    public AdaRespParam sendMessageContent(AbstractAdaSmsReqParam adaReqParam) throws IOException;
+    public Boolean sendMessageContent(AbstractAdaSmsReqParam adaReqParam) throws IOException;
+
+
+    /**
+     * @param
+     * @return
+     * @throws
+     * @Author litianlong
+     * @Version 1.0
+     * @Date 2019-03-28 18:22
+     */
+    public void getSmsReport () throws IOException;
+
 
 }

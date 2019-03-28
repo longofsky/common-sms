@@ -278,7 +278,7 @@ public class ReflectionUtils {
 		Type[] params = ((ParameterizedType) genType).getActualTypeArguments();
 
 		if (index >= params.length || index < 0) {
-//			logger.warn("Index: " + index + ", Size of " + clazz.getSimpleName() + "'s Parameterized Type: "+ params.length);
+//			logger.warn("Index: " + index + ", Size of " + clazz.getSimpleName() + "'s Parameterized Type: "+ entitys.length);
 			return Object.class;
 		}
 		if (!(params[index] instanceof Class)) {

@@ -2,6 +2,7 @@ package com.ada.common.sms.service;
 
 import com.ada.common.sms.params.AdaReqParam;
 import com.ada.common.sms.params.AdaRespParam;
+import com.ada.common.sms.params.BaseConParam;
 import com.ada.common.sms.params.WSCReqParam;
 import org.apache.commons.collections.MapUtils;
 import org.apache.commons.io.IOUtils;
@@ -35,6 +36,8 @@ public class WSCMessageServiceImpl extends AbstractMessageService {
     }
 
     public static WSCMessageServiceImpl getInstance () {
+
+        BaseConParam.getBaseConParam().getWangSuCloudConParam();
 
         return WSCMessageServiceImplFactory.wscMessageService;
     }

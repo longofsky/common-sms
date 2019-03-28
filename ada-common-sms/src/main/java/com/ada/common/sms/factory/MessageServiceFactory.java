@@ -1,7 +1,6 @@
 package com.ada.common.sms.factory;
 
 import com.ada.common.sms.enums.MessageServiceEnum;
-import com.ada.common.sms.params.BaseConParam;
 import com.ada.common.sms.service.MessageService;
 import com.ada.common.sms.service.WSCMessageServiceImpl;
 import com.ada.common.sms.service.WelinkMessageServiceImpl;
@@ -18,11 +17,6 @@ import com.ada.common.sms.service.WelinkMessageServiceImpl;
 public class MessageServiceFactory {
 
     public static MessageService getMessageService(MessageServiceEnum messageServiceEnum) {
-
-        /**
-         * 初始化 BaseConParam
-         */
-        BaseConParam.getBaseConParam(messageServiceEnum);
 
         if (MessageServiceEnum.WSC.equals(messageServiceEnum)) {
 

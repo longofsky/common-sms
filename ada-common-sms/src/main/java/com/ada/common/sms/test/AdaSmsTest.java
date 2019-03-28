@@ -35,10 +35,10 @@ public class AdaSmsTest {
         adaReqParam.setTemplateId("55005");
 
 
-//        MessageService messageService = MessageServiceFactory.getMessageService(MessageServiceEnum.WSC);
-        MessageService messageService = MessageServiceFactory.getMessageService(MessageServiceEnum.WELINk);
+        MessageService messageService = MessageServiceFactory.getMessageService(MessageServiceEnum.WSC);
+//        MessageService messageService = MessageServiceFactory.getMessageService(MessageServiceEnum.WELINk);
 
-        messageService.send(adaReqParam);
+        messageService.sendMessageContent(adaReqParam);
 
     }
 }

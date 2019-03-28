@@ -1,5 +1,6 @@
 package com.ada.common.sms.service;
 
+import com.ada.common.sms.params.BaseConParam;
 import com.ada.common.sms.params.WelinkReqParam;
 import com.ada.common.sms.params.AdaReqParam;
 import com.ada.common.sms.params.AdaRespParam;
@@ -31,6 +32,8 @@ public class WelinkMessageServiceImpl extends AbstractMessageService {
     }
 
     public static WelinkMessageServiceImpl getInstance () {
+
+        BaseConParam.getBaseConParam().getWelinkConParam();
 
         return WelinkMessageServiceImplFactory.welinkMessageService;
     }

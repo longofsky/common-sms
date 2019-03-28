@@ -17,28 +17,12 @@ import java.util.Date;
  */
 public class BaseConParam {
 
-    static MessageServiceEnum serviceEnum;
-
     private WangSuCloudConParam wangSuCloudConParam;
 
     private WelinkConParam welinkConParam;
 
     private BaseConParam() {
 
-        /**
-         * 初始化运营商基础数据
-         */
-        if (serviceEnum != null) {
-
-            if (MessageServiceEnum.WSC.equals(serviceEnum)) {
-                wangSuCloudConParam = new WangSuCloudConParam();
-
-            } else if (MessageServiceEnum.WELINk.equals(serviceEnum)) {
-
-                welinkConParam = new WelinkConParam();
-            }
-
-        }
     }
 
     private static BaseConParam baseConParam;
@@ -47,12 +31,7 @@ public class BaseConParam {
         private static BaseConParam baseConParam = new BaseConParam();
     }
 
-    public static BaseConParam getBaseConParam (MessageServiceEnum messageServiceEnum) {
-
-        if (messageServiceEnum != null) {
-
-            serviceEnum = messageServiceEnum;
-        }
+    public static BaseConParam getBaseConParam () {
 
        return BaseConParamFactory.baseConParam;
     }
@@ -203,6 +182,16 @@ public class BaseConParam {
 
 
     public WangSuCloudConParam getWangSuCloudConParam() {
+
+        if (wangSuCloudConParam == null) {
+
+            synchronized (this) {
+                if (wangSuCloudConParam == null) {
+                    wangSuCloudConParam = new WangSuCloudConParam();
+                }
+            }
+        }
+
         return wangSuCloudConParam;
     }
 
@@ -211,6 +200,16 @@ public class BaseConParam {
     }
 
     public WelinkConParam getWelinkConParam() {
+
+        if (welinkConParam == null) {
+
+            synchronized (this) {
+                if (welinkConParam == null) {
+                    welinkConParam = new WelinkConParam();
+                }
+            }
+        }
+
         return welinkConParam;
     }
 

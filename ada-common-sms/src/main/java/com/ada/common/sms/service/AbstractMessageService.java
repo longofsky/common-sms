@@ -22,7 +22,7 @@ public abstract class AbstractMessageService implements MessageService {
 
     public AbstractMessageService() {
 
-        baseConParam = BaseConParam.getBaseConParam(null);
+        baseConParam = BaseConParam.getBaseConParam();
 
     }
 

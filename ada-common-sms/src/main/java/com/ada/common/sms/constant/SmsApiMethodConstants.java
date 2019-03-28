@@ -24,7 +24,6 @@ public class SmsApiMethodConstants {
      */
     public static final String WSC_API_METHOD_getSmsReport = "/getSmsReport";
 
-
     /**
      * 微网通联发送普通短信
      */

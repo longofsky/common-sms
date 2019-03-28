@@ -6,19 +6,22 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="adachina-commo" />
-        <module name="adachina-sms" />
-        <module name="adachina-web" />
+        <module name="ada-common" />
+        <module name="ada-common-job" />
+        <module name="ada-common-secure" />
+        <module name="ada-common-serializer" />
+        <module name="ada-common-sms" />
+        <module name="ada-common-web" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="adachina-commo" target="11" />
-      <module name="adachina-commons" target="1.8.0_152-release" />
-      <module name="adachina-job" target="11" />
-      <module name="adachina-job (1)" target="11" />
-      <module name="adachina-job (2)" target="11" />
-      <module name="adachina-sms" target="11" />
-      <module name="adachina-web" target="11" />
+      <module name="ada-common" target="11" />
+      <module name="ada-common-job" target="11" />
+      <module name="ada-common-secure" target="11" />
+      <module name="ada-common-serializer" target="11" />
+      <module name="ada-common-sms" target="11" />
+      <module name="ada-common-web" target="11" />
+      <module name="ada-commons" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

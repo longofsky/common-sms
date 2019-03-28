@@ -22,6 +22,10 @@ public class AdaResponse<T> {
 
     private T data;
 
+    public AdaResponse(){
+
+    }
+
     public AdaResponse(int code, String msg, T data) {
         this.setCode(code);
         this.setMsg(msg);

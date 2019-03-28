@@ -1,5 +1,7 @@
 package com.ada.common.sms.entitys;
 
+import com.ada.common.sms.entitys.abstractentitys.AbstractAdaSmsReqParam;
+
 import java.util.Arrays;
 
 /**

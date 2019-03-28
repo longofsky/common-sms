@@ -1,6 +1,6 @@
 package com.ada.common.sms.entitys;
 
-import java.util.Arrays;
+import com.ada.common.sms.entitys.abstractentitys.AbstractAdaSmsReqParam;
 
 /**
  * @ProjectName: ada-sms

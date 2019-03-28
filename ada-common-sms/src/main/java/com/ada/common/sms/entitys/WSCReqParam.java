@@ -1,6 +1,8 @@
 package com.ada.common.sms.entitys;
 
 import com.ada.common.sms.constant.SmsApiMethodConstants;
+import com.ada.common.sms.entitys.abstractentitys.AbstractAdaSmsReqParam;
+import com.ada.common.sms.entitys.abstractentitys.AbstractSmsReqParam;
 import com.ada.common.sms.environment.BaseConnEnvironment;
 import com.alibaba.fastjson.JSON;
 import org.apache.commons.codec.digest.DigestUtils;

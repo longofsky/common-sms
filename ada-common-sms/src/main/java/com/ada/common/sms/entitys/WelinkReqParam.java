@@ -1,5 +1,7 @@
 package com.ada.common.sms.entitys;
 
+import com.ada.common.sms.entitys.abstractentitys.AbstractAdaSmsReqParam;
+import com.ada.common.sms.entitys.abstractentitys.AbstractSmsReqParam;
 import com.ada.common.sms.environment.BaseConnEnvironment;
 import org.apache.commons.lang.StringUtils;
 import sun.security.action.GetPropertyAction;
@@ -15,7 +17,7 @@ import java.io.UnsupportedEncodingException;
  * @Date: 2019-03-27 10:51
  * @Version: 1.0
  */
-public class WelinkReqParam extends AbstractSmsReqParam{
+public class WelinkReqParam extends AbstractSmsReqParam {
 
     private WelinkAdaSmsReqParam welinkAdaSmsReqParam;
 

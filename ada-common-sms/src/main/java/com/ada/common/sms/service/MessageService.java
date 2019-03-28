@@ -1,6 +1,6 @@
 package com.ada.common.sms.service;
 
-import com.ada.common.sms.entitys.AbstractAdaSmsReqParam;
+import com.ada.common.sms.entitys.abstractentitys.AbstractAdaSmsReqParam;
 import com.ada.common.sms.entitys.AdaRespParam;
 
 import java.io.IOException;

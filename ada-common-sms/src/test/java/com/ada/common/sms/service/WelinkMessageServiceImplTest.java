@@ -21,10 +21,8 @@ public class WelinkMessageServiceImplTest {
     @Test
     public void testSendMessageContent () throws IOException {
 
-
         WelinkAdaSmsReqParam adaReqParam = new WelinkAdaSmsReqParam();
         adaReqParam.setContent("您的验证码是：25129。请不要把验证码泄露给其他人。【微网通联】");
-
 
         adaReqParam.setPhone("15527248869");
 

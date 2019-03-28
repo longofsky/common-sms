@@ -1,5 +1,7 @@
 package com.ada.common.sms.entitys;
 
+import com.ada.common.sms.environment.BaseConnEnvironment;
+
 import java.io.UnsupportedEncodingException;
 
 /**
@@ -15,14 +17,6 @@ public abstract class AbstractSmsReqParam {
 
     public BaseConnEnvironment baseConnEnvironment;
 
-    public AdaReqParam adaReqParam;
-
-    public AbstractSmsReqParam(BaseConnEnvironment baseConnEnvironment, AdaReqParam adaReqParam) throws UnsupportedEncodingException {
-
-        this.baseConnEnvironment = baseConnEnvironment;
-        this.adaReqParam = adaReqParam;
-        init();
-    }
 
     public abstract void init() throws UnsupportedEncodingException;
 }

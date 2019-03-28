@@ -1,8 +1,8 @@
 package com.ada.common.sms.service;
 
-import com.ada.common.sms.entitys.BaseConnEnvironment;
+import com.ada.common.sms.entitys.AbstractAdaSmsReqParam;
+import com.ada.common.sms.environment.BaseConnEnvironment;
 import com.ada.common.sms.entitys.WelinkReqParam;
-import com.ada.common.sms.entitys.AdaReqParam;
 import com.ada.common.sms.entitys.AdaRespParam;
 
 import java.io.BufferedReader;
@@ -39,7 +39,7 @@ public class WelinkMessageServiceImpl extends AbstractMessageService {
     }
 
     @Override
-    public AdaRespParam sendMessageContent(AdaReqParam adaReqParam) throws IOException {
+    public AdaRespParam sendMessageContent(AbstractAdaSmsReqParam adaReqParam) throws IOException {
 
         super.sendMessageContent(adaReqParam);
 

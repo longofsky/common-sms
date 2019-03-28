@@ -1,6 +1,8 @@
 package com.ada.common.sms.entitys;
 
+import com.ada.common.sms.environment.BaseConnEnvironment;
 import org.apache.commons.lang.StringUtils;
+import sun.security.action.GetPropertyAction;
 
 import java.io.UnsupportedEncodingException;
 
@@ -15,10 +17,13 @@ import java.io.UnsupportedEncodingException;
  */
 public class WelinkReqParam extends AbstractSmsReqParam{
 
+    private WelinkAdaSmsReqParam welinkAdaSmsReqParam;
 
+    public WelinkReqParam (BaseConnEnvironment baseConnEnvironment, AbstractAdaSmsReqParam abstractAdaSmsReqParam) throws UnsupportedEncodingException {
+        this.baseConnEnvironment = baseConnEnvironment;
+        this.welinkAdaSmsReqParam = (WelinkAdaSmsReqParam)abstractAdaSmsReqParam;
 
-    public WelinkReqParam (BaseConnEnvironment baseConnEnvironment, AdaReqParam adaReqParam) throws UnsupportedEncodingException {
-        super(baseConnEnvironment,adaReqParam);
+        init();
     }
 
     /**
@@ -50,12 +55,12 @@ public class WelinkReqParam extends AbstractSmsReqParam{
             postDataBuilder.append(baseConnEnvironment.getWelinkConParam().getSprdid());
         }
         postDataBuilder.append("&sdst=");
-        if (StringUtils.isNotEmpty(adaReqParam.getPhone())) {
-            postDataBuilder.append(adaReqParam.getPhone());
+        if (StringUtils.isNotEmpty(welinkAdaSmsReqParam.getPhone())) {
+            postDataBuilder.append(welinkAdaSmsReqParam.getPhone());
         }
         postDataBuilder.append("&smsg=");
-        if (StringUtils.isNotEmpty(adaReqParam.getContent())) {
-            postDataBuilder.append(java.net.URLEncoder.encode(adaReqParam.getContent()));
+        if (StringUtils.isNotEmpty(welinkAdaSmsReqParam.getContent())) {
+            postDataBuilder.append(java.net.URLEncoder.encode(welinkAdaSmsReqParam.getContent(), GetPropertyAction.privilegedGetProperty("file.encoding")));
         }
         this.postData = postDataBuilder.toString();
         this.postUrl = baseConnEnvironment.getWelinkConParam().getApi();

@@ -11,18 +11,13 @@ import java.util.Arrays;
  * @Date: 2019-03-27 10:51
  * @Version: 1.0
  */
-public class AdaReqParam {
-
+public class WSCAdaSmsReqParam extends AbstractAdaSmsReqParam {
 
     /**
      * 短信类型 type:业务类型 ，必填，整型， 1-营销短信，2-行业短信【比如验证码】
      */
     private Integer type;
 
-    /**
-     * 短信内容
-     */
-    private String content;
     /**
      * 模版ID
      */
@@ -31,10 +26,6 @@ public class AdaReqParam {
      * 模版参数
      */
     private String [] param;
-    /**
-     * 接收手机号
-     */
-    private String phone;
 
     public Integer getType() {
         return type;
@@ -42,14 +33,6 @@ public class AdaReqParam {
 
     public void setType(Integer type) {
         this.type = type;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
     }
 
     public String getTemplateId() {
@@ -66,14 +49,6 @@ public class AdaReqParam {
 
     public void setParam(String[] param) {
         this.param = param;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
     }
 
     @Override

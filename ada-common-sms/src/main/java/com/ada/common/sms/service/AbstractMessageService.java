@@ -1,8 +1,8 @@
 package com.ada.common.sms.service;
 
-import com.ada.common.sms.entitys.AdaReqParam;
+import com.ada.common.sms.entitys.AbstractAdaSmsReqParam;
 import com.ada.common.sms.entitys.AdaRespParam;
-import com.ada.common.sms.entitys.BaseConnEnvironment;
+import com.ada.common.sms.environment.BaseConnEnvironment;
 
 import java.io.IOException;
 
@@ -27,7 +27,7 @@ public abstract class AbstractMessageService implements MessageService {
     }
 
     @Override
-    public AdaRespParam sendMessageContent(AdaReqParam adaReqParam) throws IOException  {
+    public AdaRespParam sendMessageContent(AbstractAdaSmsReqParam adaReqParam) throws IOException  {
 
         /**
          * 异步持久化短信信息 todo

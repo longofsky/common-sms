@@ -64,8 +64,10 @@
         <jaxb-core.version>2.3.0</jaxb-core.version>
         <activation.version>1.1.1</activation.version>
 
-    </properties>
+        <!--test-->
+        <junit-jupiter-api.version>5.4.0</junit-jupiter-api.version>
 
+    </properties>
 
     <build>
         <plugins>

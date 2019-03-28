@@ -1,8 +1,8 @@
 package com.ada.common.sms.service;
 
-import com.ada.common.sms.entitys.AdaReqParam;
+import com.ada.common.sms.entitys.AbstractAdaSmsReqParam;
 import com.ada.common.sms.entitys.AdaRespParam;
-import com.ada.common.sms.entitys.BaseConnEnvironment;
+import com.ada.common.sms.environment.BaseConnEnvironment;
 import com.ada.common.sms.entitys.WSCReqParam;
 import org.apache.commons.collections.MapUtils;
 import org.apache.commons.io.IOUtils;
@@ -43,7 +43,7 @@ public class WSCMessageServiceImpl extends AbstractMessageService {
     }
 
     @Override
-    public AdaRespParam sendMessageContent(AdaReqParam adaReqParam) throws IOException {
+    public AdaRespParam sendMessageContent(AbstractAdaSmsReqParam adaReqParam) throws IOException {
 
         super.sendMessageContent(adaReqParam);
         WSCReqParam wscReqParam = new WSCReqParam(baseConnEnvironment,adaReqParam);

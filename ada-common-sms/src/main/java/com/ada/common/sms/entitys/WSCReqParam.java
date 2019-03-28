@@ -1,6 +1,7 @@
 package com.ada.common.sms.entitys;
 
 import com.ada.common.sms.constant.SmsApiMethodConstants;
+import com.ada.common.sms.environment.BaseConnEnvironment;
 import com.alibaba.fastjson.JSON;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang.StringUtils;
@@ -21,9 +22,13 @@ import java.util.*;
  */
 public class WSCReqParam extends AbstractSmsReqParam {
 
-    public WSCReqParam (BaseConnEnvironment baseConnEnvironment, AdaReqParam adaReqParam) throws UnsupportedEncodingException {
+    private WSCAdaSmsReqParam wscAdaSmsReqParam;
 
-        super(baseConnEnvironment,adaReqParam);
+    public WSCReqParam (BaseConnEnvironment baseConnEnvironment, AbstractAdaSmsReqParam abstractAdaSmsReqParam) throws UnsupportedEncodingException {
+        this.baseConnEnvironment = baseConnEnvironment;
+        this.wscAdaSmsReqParam = (WSCAdaSmsReqParam)abstractAdaSmsReqParam;
+
+        init();
     }
 
     /**
@@ -41,36 +46,36 @@ public class WSCReqParam extends AbstractSmsReqParam {
         //生成auth-signature
         Map<String, String> authSignatureParam = new HashMap<>();
 
-        if (adaReqParam == null) {
+        if (wscAdaSmsReqParam == null) {
             this.api = baseConnEnvironment.getWangSuCloudConParam().getApi() + SmsApiMethodConstants.WSC_API_METHOD_getSmsReport;
         } else {
 
             Map<String, Object> smsParam = new HashMap<>(16);
-            smsParam.put("type", adaReqParam.getType());
+            smsParam.put("type", wscAdaSmsReqParam.getType());
 
 
             /**
              * 变量模版类型
              */
 
-            if (StringUtils.isNotBlank(adaReqParam.getTemplateId())) {
+            if (StringUtils.isNotBlank(wscAdaSmsReqParam.getTemplateId())) {
 
-                smsParam.put("templateId", adaReqParam.getTemplateId());
+                smsParam.put("templateId", wscAdaSmsReqParam.getTemplateId());
                 this.api = baseConnEnvironment.getWangSuCloudConParam().getApi() + SmsApiMethodConstants.WSC_API_METHOD_SENDVARSMS;
             } else {
 
-                if (StringUtils.isNotBlank(adaReqParam.getContent())) {
+                if (StringUtils.isNotBlank(wscAdaSmsReqParam.getContent())) {
                     /**
                      * content 类型
                      */
-                    smsParam.put("content", adaReqParam.getContent());
+                    smsParam.put("content", wscAdaSmsReqParam.getContent());
                 } else {
                     throw new RuntimeException("消息模版ID和信息内容不能同时为空！");
                 }
                 this.api = baseConnEnvironment.getWangSuCloudConParam().getApi() + SmsApiMethodConstants.WSC_API_METHOD_SENDSMS;
             }
-            smsParam.put("param", adaReqParam.getParam());
-            smsParam.put("phone", adaReqParam.getPhone());
+            smsParam.put("param", wscAdaSmsReqParam.getParam());
+            smsParam.put("phone", wscAdaSmsReqParam.getPhone());
             //将smsParam转成json字符串
             final String smsJson = JSON.toJSONString(smsParam);
 

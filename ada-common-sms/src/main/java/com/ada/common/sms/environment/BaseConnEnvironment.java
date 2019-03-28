@@ -1,4 +1,4 @@
-package com.ada.common.sms.entitys;
+package com.ada.common.sms.environment;
 
 import com.ada.common.sms.constant.SmsApiMethodConstants;
 

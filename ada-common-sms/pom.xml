@@ -53,6 +53,12 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>com.ada.cfgcenters</groupId>
+            <artifactId>ada-cfgcenter</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
     </dependencies>
 
 </project>

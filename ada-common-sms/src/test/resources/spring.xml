@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:apollo="http://www.ctrip.com/schema/apollo"
+       xmlns:ada-context="http://www.ada.com/schema/ada-context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.ctrip.com/schema/apollo http://www.ctrip.com/schema/apollo.xsd
+       http://www.ada.com/schema/ada-context http://www.ada.com/schema/ada-context-1.0.0.xsd
+       http://www.springframework.org/schema/beans ">
+
+    <apollo:config namespaces="application,test-namespace"/>
+    <!--<ada-context:config files="config/ada-context-config.properties,ada-context.properties"/>-->
+
+    <context:annotation-config/>
+
+    <bean id="adaCfgCenterLoader" class="com.ada.cfgcenter.config.localize.AdaCfgCenterLoader"/>
+
+</beans>

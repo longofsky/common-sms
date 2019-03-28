@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/ada-commons.iml" filepath="$PROJECT_DIR$/.idea/ada-commons.iml" />
       <module fileurl="file://$PROJECT_DIR$/ada-common/adachina-commo.iml" filepath="$PROJECT_DIR$/ada-common/adachina-commo.iml" />
       <module fileurl="file://$PROJECT_DIR$/adachina-commons.iml" filepath="$PROJECT_DIR$/adachina-commons.iml" />
       <module fileurl="file://$PROJECT_DIR$/ada-sms/adachina-sms.iml" filepath="$PROJECT_DIR$/ada-sms/adachina-sms.iml" />

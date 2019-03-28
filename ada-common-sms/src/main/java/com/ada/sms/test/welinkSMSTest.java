@@ -22,7 +22,7 @@ public class welinkSMSTest {
     public static void main(String[] args) throws IOException {
 
 
-        String PostData = "sname=dllxceshi&spwd=dllxceshi123&scorpid=&sprdid=1012888&sdst=15527248869&smsg="+java.net.URLEncoder.encode("您的验证码是：25129。请不要把验证码泄露给其他人。【微网通联】","utf-8");
+        String PostData = "sname=dllxceshi&spwd=dllxceshi123&scorpid=&sprdid=1012888&sdst=15527248869&smsg="+java.net.URLEncoder.encode("您的验证码是：25130。请不要把验证码泄露给其他人。【微网通联】","utf-8");
 
         String ret = SMS(PostData, "http://jiekou.51welink.com/submitdata/service.asmx/g_Submit");
 

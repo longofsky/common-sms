@@ -137,7 +137,7 @@ public class BaseConParam {
 
             //todo
             api= "http://jiekou.51welink.com/submitdata/service.asmx" + SmsApiMethodConstants.Welink_API_METHOD_g_Submit;
-            sname="sname=dllxceshi";
+            sname="dllxceshi";
             spwd="dllxceshi123";
 //            scorpid= null;
             sprdid="1012888";

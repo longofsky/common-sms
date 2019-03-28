@@ -1,5 +1,7 @@
 package com.ada.sms.params;
 
+import org.apache.commons.lang.StringUtils;
+
 import java.io.UnsupportedEncodingException;
 import java.util.*;
 
@@ -16,15 +18,8 @@ public class WelinkReqParam extends AbstractSmsReqParam{
 
 
 
-    public WelinkReqParam (BaseConParam baseConParam,AdaReqParam adaReqParam) {
+    public WelinkReqParam (BaseConParam baseConParam,AdaReqParam adaReqParam) throws UnsupportedEncodingException {
         super(baseConParam,adaReqParam);
-    }
-
-    @Override
-    public void init() throws UnsupportedEncodingException {
-        postData = "sname="+baseConParam.getWelinkConParam().getSname()+"&spwd="+baseConParam.getWelinkConParam().getSpwd()+"&scorpid="+baseConParam.getWelinkConParam().getScorpid()+"&sprdid="+baseConParam.getWelinkConParam().getSprdid()+"&sdst="+adaReqParam.getPhone()+"&smsg="+java.net.URLEncoder.encode(adaReqParam.getContent(),"utf-8");
-
-        postUrl = baseConParam.getWelinkConParam().getApi();
     }
 
     /**
@@ -33,6 +28,39 @@ public class WelinkReqParam extends AbstractSmsReqParam{
     private String postData;
 
     private String postUrl;
+
+    @Override
+    public void init() throws UnsupportedEncodingException {
+
+        StringBuilder postDataBuilder = new StringBuilder();
+        postDataBuilder.append("sname=");
+
+        if (StringUtils.isNotEmpty(baseConParam.getWelinkConParam().getSname())) {
+            postDataBuilder.append(baseConParam.getWelinkConParam().getSname());
+        }
+        postDataBuilder.append("&spwd=");
+        if (StringUtils.isNotEmpty(baseConParam.getWelinkConParam().getSpwd())) {
+            postDataBuilder.append(baseConParam.getWelinkConParam().getSpwd());
+        }
+        postDataBuilder.append("&scorpid=");
+        if (StringUtils.isNotEmpty(baseConParam.getWelinkConParam().getScorpid())) {
+            postDataBuilder.append(baseConParam.getWelinkConParam().getScorpid());
+        }
+        postDataBuilder.append("&sprdid=");
+        if (StringUtils.isNotEmpty(baseConParam.getWelinkConParam().getSprdid())) {
+            postDataBuilder.append(baseConParam.getWelinkConParam().getSprdid());
+        }
+        postDataBuilder.append("&sdst=");
+        if (StringUtils.isNotEmpty(adaReqParam.getPhone())) {
+            postDataBuilder.append(adaReqParam.getPhone());
+        }
+        postDataBuilder.append("&smsg=");
+        if (StringUtils.isNotEmpty(adaReqParam.getContent())) {
+            postDataBuilder.append(java.net.URLEncoder.encode(adaReqParam.getContent()));
+        }
+        this.postData = postDataBuilder.toString();
+        this.postUrl = baseConParam.getWelinkConParam().getApi();
+    }
 
     public String getPostData() {
         return postData;

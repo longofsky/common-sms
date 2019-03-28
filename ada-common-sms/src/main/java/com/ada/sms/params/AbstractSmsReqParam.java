@@ -20,10 +20,11 @@ public abstract class AbstractSmsReqParam {
 
     public AdaReqParam adaReqParam;
 
-    public AbstractSmsReqParam(BaseConParam baseConParam, AdaReqParam adaReqParam) {
+    public AbstractSmsReqParam(BaseConParam baseConParam, AdaReqParam adaReqParam) throws UnsupportedEncodingException {
 
         this.baseConParam = baseConParam;
         this.adaReqParam = adaReqParam;
+        init();
     }
 
     public abstract void init() throws UnsupportedEncodingException;

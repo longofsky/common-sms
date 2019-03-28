@@ -44,6 +44,8 @@ public class WelinkMessageServiceImpl extends AbstractMessageService {
 
         String result =  post(welinkReqParam);
 
+        System.out.println(result);
+
         return null;
 
     }

@@ -5,6 +5,8 @@ import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang.StringUtils;
 
 import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 /**
@@ -18,10 +20,19 @@ import java.util.*;
  */
 public class WSCReqParam extends AbstractSmsReqParam {
 
-    public WSCReqParam (BaseConParam baseConParam,AdaReqParam adaReqParam) {
+    public WSCReqParam (BaseConParam baseConParam,AdaReqParam adaReqParam) throws UnsupportedEncodingException {
 
         super(baseConParam,adaReqParam);
     }
+
+    /**
+     * api地址
+     */
+    private String api;
+
+    private String parameter;
+
+    private Map<String, String> headerValue;
 
     @Override
     public void init() throws UnsupportedEncodingException {
@@ -58,17 +69,11 @@ public class WSCReqParam extends AbstractSmsReqParam {
         header.put("auth-timeStamp", baseConParam.getWangSuCloudConParam().getTimestamp());
         header.put("auth-signature", sign);
 
+        this.api = baseConParam.getWangSuCloudConParam().getApi();
+        this.parameter = "sms=" + URLEncoder.encode(smsJson, StandardCharsets.UTF_8.name());
+        this.headerValue = header;
+
     }
-
-    /**
-     * api地址
-     */
-    private String api;
-
-    private String parameter;
-
-    private Map<String, String> headerValue;
-
 
     public String getApi() {
         return api;

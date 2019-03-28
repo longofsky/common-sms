@@ -17,6 +17,5 @@ public abstract class AbstractSmsReqParam  {
 
     public BaseConnEnvironment baseConnEnvironment;
 
-
     public abstract void init() throws UnsupportedEncodingException;
 }

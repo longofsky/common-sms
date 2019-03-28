@@ -18,13 +18,15 @@ public interface MessageService {
 
 
     /**
-     * @Description
+     * 短信发送接口
+     * @description
      * @Author litianlong
      * @Version 1.0
-     * @Param
-     * @Return
-     * @Exception
+     * @param adaReqParam
+     * @return  AdaRespParam
+     * @throws IOException
      * @Date 2019-03-27 13:42
+     *
      */
     public AdaRespParam sendMessageContent(AdaReqParam adaReqParam) throws IOException;
 

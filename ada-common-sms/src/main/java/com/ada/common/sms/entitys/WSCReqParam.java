@@ -10,7 +10,6 @@ import org.apache.commons.lang.StringUtils;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 /**
@@ -82,7 +81,7 @@ public class WSCReqParam extends AbstractSmsReqParam {
             final String smsJson = JSON.toJSONString(smsParam);
 
             authSignatureParam.put("sms", smsJson);
-            this.parameter = "sms=" + URLEncoder.encode(smsJson, StandardCharsets.UTF_8.name());
+            this.parameter = "sms=" + URLEncoder.encode(smsJson);
         }
 
         authSignatureParam.put("auth-timeStamp", baseConnEnvironment.getWangSuCloudConParam().getTimestamp());

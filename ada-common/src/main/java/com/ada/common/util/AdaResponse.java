@@ -1,12 +1,10 @@
-package com.ada.web.response;
+package com.ada.common.util;
 
-import lombok.Data;
 
 /**
  * Created by jack
  * @author jack
  */
-@Data
 public class AdaResponse<T> {
     private static final int CODE_SUCCESS = 200;
 
@@ -84,4 +82,27 @@ public class AdaResponse<T> {
         return new AdaResponse<T>(CODE_NO_LOGIN, message, null);
     }
 
+    public int getCode() {
+        return code;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
+    public T getData() {
+        return data;
+    }
+
+    public void setData(T data) {
+        this.data = data;
+    }
 }

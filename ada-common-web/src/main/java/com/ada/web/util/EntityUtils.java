@@ -1,6 +1,6 @@
 package com.ada.web.util;
 
-import com.ada.common.util.ReflectionUtils;
+import com.ada.common.utils.ReflectionUtils;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 

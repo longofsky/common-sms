@@ -1,9 +1,9 @@
 package com.ada.web.controller;
 
+import com.ada.common.util.AdaResponse;
 import com.ada.web.biz.BaseBiz;
 import com.ada.web.context.BaseContextHandler;
 import com.ada.web.service.Query;
-import com.ada.web.response.AdaResponse;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageInfo;
 import lombok.extern.slf4j.Slf4j;

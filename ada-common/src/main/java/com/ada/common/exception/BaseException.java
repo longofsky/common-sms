@@ -1,17 +1,15 @@
 package com.ada.common.exception;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 /**
  * @author jack.
  */
-@Getter
-@Setter
-@NoArgsConstructor
 public class BaseException extends RuntimeException {
     private int status = 200;
+
+    public BaseException () {
+
+    }
 
     public BaseException(String message,int status) {
         super(message);
@@ -32,5 +30,13 @@ public class BaseException extends RuntimeException {
 
     public BaseException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
         super(message, cause, enableSuppression, writableStackTrace);
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
     }
 }

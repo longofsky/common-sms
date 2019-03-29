@@ -1,4 +1,4 @@
-package com.ada.common.util;
+package com.ada.common.utils;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.Validate;

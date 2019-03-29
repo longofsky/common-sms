@@ -38,9 +38,9 @@ public class WSCMessageServiceImplTest {
         adaReqParam.setPhone("15527248869");
 //        adaReqParam.setTemplateId("55006");
 
-        MessageService messageService = MessageServiceFactory.getMessageService(MessageServiceEnum.WSC);
-
-        messageService.sendMessageContent(adaReqParam);
+//        MessageService messageService = MessageServiceFactory.getMessageService(MessageServiceEnum.WSC);
+//
+//        messageService.sendMessageContent(adaReqParam);
 
     }
 
@@ -49,9 +49,9 @@ public class WSCMessageServiceImplTest {
 
         MessageService messageService = MessageServiceFactory.getMessageService(MessageServiceEnum.WSC);
 
-        WSCRespReport wscRespReport = messageService.getSmsReport();
-
-        System.out.println(wscRespReport.toString());
+//        WSCRespReport wscRespReport = messageService.getSmsReport();
+//
+//        System.out.println(wscRespReport.toString());
 
     }
 }

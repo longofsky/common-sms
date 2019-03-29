@@ -26,9 +26,9 @@ public class WelinkMessageServiceImplTest {
 
         adaReqParam.setPhone("15527248869");
 
-        MessageService messageService = MessageServiceFactory.getMessageService(MessageServiceEnum.WELINk);
-
-        messageService.sendMessageContent(adaReqParam);
+//        MessageService messageService = MessageServiceFactory.getMessageService(MessageServiceEnum.WELINk);
+//
+//        messageService.sendMessageContent(adaReqParam);
 
     }
 }

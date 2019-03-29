@@ -16,6 +16,7 @@
         <module>ada-common-secure</module>
         <module>ada-common-serializer</module>
         <module>ada-common-utils</module>
+        <module>ada-common-annotations</module>
 	</modules>
 
     <properties>
@@ -30,6 +31,7 @@
         <ada-common-web.version>0.0.1-SNAPSHOT</ada-common-web.version>
         <ada-common-sms.version>0.0.1-SNAPSHOT</ada-common-sms.version>
         <ada-common-utils.version>0.0.1-SNAPSHOT</ada-common-utils.version>
+        <ada-common-annotations.version>0.0.1-SNAPSHOT</ada-common-annotations.version>
 
         <!--apache-->
         <commons-lang3.version>3.8.1</commons-lang3.version>
